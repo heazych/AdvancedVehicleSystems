@@ -4,7 +4,7 @@ This modification was uploaded from the developer's squad telegram channel, the 
 
 # Instruction manual:
 In order for the ABS to work properly, follow the following instructions:
-1. Transfer the files from the "avz" folder to the root of the game/build;
+1. Transfer the files from the "avs" folder to the root of the game/build;
 2. Transfer the code from the pawno text file to your mod, then compile it.
 After completing these actions, the modification will work.
 
