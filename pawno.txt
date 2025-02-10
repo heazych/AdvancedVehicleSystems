@@ -1,0 +1,43 @@
+Test(vehicleid)
+{
+	new BitStream:bsn = BS_New();
+
+	BS_WriteValue(bsn, PR_UINT8, 220);
+	BS_WriteValue(bsn, PR_UINT16, vehicleid);
+
+	PR_SendPacketToVehicleStream(bsn, vehicleid);
+	BS_Delete(bsn);
+	return 1;
+}
+
+Test2(vehicleid, sirenstate)
+{
+	new BitStream:bsn = BS_New();
+
+	BS_WriteValue(bsn, PR_UINT8, 221);
+	BS_WriteValue(bsn, PR_UINT16, vehicleid);
+	BS_WriteValue(bsn, PR_UINT8, sirenstate);
+
+	PR_SendPacketToVehicleStream(bsn, vehicleid);
+	BS_Delete(bsn);
+}
+CMD:vsiren(playerid, params[])
+{
+	if(!IsPlayerInAnyVehicle(playerid)) return SCM(playerid,0xCC0000AA,"Вы не в автомобиле.");
+	new vid = GetPlayerVehicleID(playerid);
+	SendClientMessage(playerid, 0xCC0000FF, "Вы включили сирену .");
+	Test(vid);
+	return 1;
+}
+
+CMD:rsiren(playerid, params[])
+{
+	if(!IsPlayerInAnyVehicle(playerid)) return SCM(playerid,0xCC0000AA,"Вы не в автомобиле.");
+	new vid = GetPlayerVehicleID(playerid), sirenstate, vSirenState;
+	if(sscanf(params, "d", sirenstate))return
+	SendClientMessage(playerid, 0xCC0000FF, "/rsiren [ID маячка].");
+	Test2(vid, sirenstate);
+	cInfo[vid][vSirenState] = sirenstate;
+	SendClientMessage(playerid, 0xCC0000FF, "Вы сменили маячок.");
+	return 1;
+}
