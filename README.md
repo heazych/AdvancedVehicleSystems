@@ -1,6 +1,6 @@
 # AdvancedVehicleSystems
 Advanced Vehicle Systems - is an adaptation to the GTA Criminal Russia game. You can use it to improve flashing lights for government vehicles.
-This modification was uploaded from the developer's squad telegram channel, the authorship remains with CEF RED STUDIO.
+This modification was uploaded from the developer's squad telegram channel, the authorship remains with CEF RED STUDIO (https://vk.com/cef_studio).
 
 # Instruction manual:
 In order for the AVS to work properly, follow the following instructions:
